@@ -1,0 +1,81 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixes.scss";
+
+.Footer {
+  padding: 0 10rem;
+  background-color: black;
+  .top {
+    @include flex-center(row);
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5rem 0 3rem;
+    .description {
+      h3 {
+        font-weight: bold;
+      }
+      p {
+        font-size: 1.2rem;
+        width: 80%;
+      }
+    }
+
+    .links-container {
+      h3 {
+        font-weight: bold;
+      }
+      .links {
+        @include flex-center(row);
+        gap: 1.5rem;
+        a {
+          color: $color2;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+  .bottom {
+    text-align: center;
+    a {
+      font-weight: bold;
+      color: white;
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .Footer {
+    padding: 0 5rem;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Footer {
+    padding: 0 1rem;
+    .top {
+      padding: 3rem 0 1rem;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .Footer {
+    .top {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      padding: 1rem 0 0;
+      .description {
+        p {
+          width: 100%;
+        }
+      }
+      .links-container {
+        width: 60%;
+        h3 {
+          display: none;
+        }
+        .links {
+          justify-content: space-around;
+        }
+      }
+    }
+  }
+}

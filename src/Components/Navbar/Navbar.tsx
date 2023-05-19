@@ -1,0 +1,68 @@
+import logo from "../../assets/tomlogo3.png";
+import { Link } from "react-scroll";
+import { useState } from "react";
+import "./Navbar.scss";
+
+function Navbar(): JSX.Element {
+  const pages = ["Home", "Projects", "About", "Contact"];
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+  const closeMenu = () => setIsOpen(false);
+
+  return (
+    <div className="Navbar">
+      <nav className="navbar navbar-expand-sm navbar-dark fixed-top">
+        <Link to="Home" className="navbar-brand" spy={true} offset={-100}>
+          <img src={logo} className="logo-img" alt="Logo" />
+        </Link>
+        <button
+          className="navbar-toggler"
+          onClick={toggleMenu}
+          onBlur={closeMenu}
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className={`menu ${isOpen ? "show" : ""}`}>
+          <ul className="navbar-nav">
+            {pages.map((p) => (
+              <li className="nav-item" key={p}>
+                <Link
+                  className="nav-link"
+                  activeClass="active"
+                  to={p}
+                  spy={true}
+                  offset={-100}
+                >
+                  {p.toUpperCase()}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div
+          className="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul className="navbar-nav">
+            {pages.map((p) => (
+              <li className="nav-item" key={p}>
+                <Link
+                  className="nav-link"
+                  activeClass="active"
+                  to={p}
+                  spy={true}
+                  offset={-100}
+                >
+                  {p.toUpperCase()}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </nav>
+    </div>
+  );
+}
+
+export default Navbar;

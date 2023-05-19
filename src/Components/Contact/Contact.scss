@@ -1,0 +1,114 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixes.scss";
+
+.Contact {
+  @include flex-center(column);
+  justify-content: flex-start;
+  padding: 3rem 0 10rem;
+  .header {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .header-border {
+    width: 2rem;
+    height: 3px;
+    border-radius: 5px;
+    background-color: $color1;
+  }
+  p {
+    font-size: 1.3rem;
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .contact-form {
+    padding: 2rem;
+    border-radius: 5px;
+    width: 50%;
+    background-color: lighten($bgColor, 5%);
+    text-align: center;
+    min-height: 30rem;
+    .form-group {
+      text-align: start;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      .form-control {
+        font-size: 1.2rem;
+        border-radius: 5px;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        &:focus {
+          box-shadow: rgba($color1, 0.5) 0px 0px 0px 3px;
+        }
+      }
+    }
+    .submit-btn {
+      background-color: $color1;
+      font-size: 1.3rem;
+      padding: 0.5rem 3rem;
+      border-radius: 5px;
+      border: none;
+      font-weight: bold;
+    }
+    .thanks-msg {
+      height: 100%;
+      @include flex-center(column);
+      padding: 3rem;
+      text-align: center;
+      span {
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+        background-color: gray;
+        border-radius: 50%;
+      }
+      .home-btn {
+        margin-top: 2rem;
+        color: $color1;
+        font-weight: bold;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      transition: all 0.5s ease-out;
+    }
+    .hide {
+      opacity: 0;
+      height: 0;
+      width: 0;
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .Contact {
+    p {
+      max-width: 75%;
+    }
+    .contact-form {
+      width: 75%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .Contact {
+    p {
+      max-width: 90%;
+    }
+    .contact-form {
+      width: 90%;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .Contact {
+    p {
+      max-width: 98%;
+    }
+    .contact-form {
+      padding: 2rem 1rem;
+      width: 98%;
+    }
+  }
+}

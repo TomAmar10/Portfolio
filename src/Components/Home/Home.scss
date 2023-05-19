@@ -1,0 +1,163 @@
+@import "../../styles/mixes.scss";
+@import "../../styles/variables.scss";
+
+.Home {
+  @include flex-center(row);
+  padding: 2rem 5rem 10rem;
+  gap: 3rem;
+  .profile-container {
+    img {
+      width: 60%;
+      border-radius: 500px;
+      transform: rotate(20deg);
+    }
+  }
+
+  .details-container {
+    @include flex-center(column);
+    gap: 3rem;
+
+    .home-header {
+      font-size: 3.5rem;
+      font-weight: bold;
+    }
+    .main-paragraph {
+      max-width: 80%;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+    img {
+      display: none;
+    }
+  }
+  .my-projects-btn {
+    @include flex-center(row);
+    background-color: $color1;
+    line-height: 50px;
+    height: 50px;
+    width: 250px;
+    cursor: pointer;
+    color: black;
+    transition: all 0.5s;
+    position: relative;
+    border: none;
+  }
+  .my-projects-btn span {
+    font-size: 1.4rem;
+    z-index: 2;
+    font-weight: bold;
+  }
+  .my-projects-btn::before {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 5px 15px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .my-projects-btn::after {
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 5px 15px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .my-projects-btn:hover::before {
+    transform: rotate(-45deg);
+    background-color: (rgba($color1, 0.3));
+    box-shadow: none;
+  }
+  .my-projects-btn:hover::after {
+    transform: rotate(45deg);
+    background-color: (rgba($color1, 0.3));
+    box-shadow: none;
+  }
+  .links-container {
+    position: absolute;
+    left: 0;
+    @include flex-center(column);
+    gap: 2rem;
+    padding: 1rem;
+    box-shadow: rgba(219, 218, 218, 0.15) 0px 5px 15px;
+    * {
+      color: $color2;
+      font-size: 2rem;
+      &.fa-phone {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .Home {
+    padding: 10rem 5rem 10rem;
+    justify-content: space-between;
+    .profile-container {
+      img {
+        width: 70%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .Home {
+    .profile-container {
+      img {
+        width: 80%;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 850px) {
+  .Home {
+    padding: 2rem 5rem 10rem;
+    .profile-container {
+      display: none;
+    }
+    .details-container {
+      img {
+        display: block;
+        width: 30%;
+        border-radius: 500px;
+        transform: rotate(20deg);
+      }
+    }
+  }
+}
+@media only screen and (max-width: 550px) {
+  .Home {
+    flex-direction: column;
+    padding: 2rem 2rem 10rem;
+    .details-container {
+      .home-header {
+        font-size: 2.5rem;
+        margin: 0;
+      }
+      .main-paragraph {
+        max-width: 100%;
+      }
+      img {
+        width: 40%;
+        margin-top: -2rem;
+      }
+    }
+    .links-container {
+      position: relative;
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}

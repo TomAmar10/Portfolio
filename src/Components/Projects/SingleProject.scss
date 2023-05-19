@@ -1,0 +1,135 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixes.scss";
+
+.SingleProject {
+  @include flex-center(row);
+  gap: 5rem;
+  margin-top: 5rem;
+  .project-info {
+    @include flex-center(column);
+    width: 40%;
+    font-size: 1.3rem;
+    h3 {
+      font-weight: bold;
+    }
+    .description {
+      margin-bottom: 2rem;
+    }
+    .hotix-button {
+      button {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: $color1;
+        width: max-content;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        border: 1px $color1 solid;
+        text-decoration: none;
+        transition: all 0.3s ease-out;
+        background-color: transparent;
+        &:hover {
+          box-shadow: rgba($color1, 0.26) 0px 2px 30px 3px;
+          background-color: $color1;
+          color: black;
+        }
+      }
+    }
+    h5 {
+      text-decoration: underline;
+      text-align: center;
+      font-size: 1.3rem;
+    }
+    .tools {
+      width: 100%;
+      font-weight: bold;
+      @include flex-center(row);
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+    .project-links {
+      width: 100%;
+      .links {
+        @include flex-center(row);
+      }
+      a {
+        width: calc(100% / 3);
+        text-align: center;
+        text-decoration: none;
+        color: $color1;
+        transition: all 0.3s ease;
+        &:hover {
+          color: lighten($color1, 10%);
+          font-weight: bold;
+        }
+      }
+      .code-msg {
+        display: block;
+        font-size: 1rem;
+        text-align: left;
+      }
+    }
+  }
+  .video-area {
+    width: 35%;
+    cursor: pointer;
+    .project-video {
+      width: 100%;
+      position: relative;
+      .computer-bg {
+        width: 100%;
+        z-index: 5;
+        position: relative;
+      }
+      video {
+        position: absolute;
+        width: 95%;
+        top: 4%;
+        left: 2%;
+        z-index: 4;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .SingleProject {
+    gap: 3rem;
+    .video-area {
+      width: 45%;
+    }
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .SingleProject {
+    flex-direction: column;
+    margin-top: 3rem;
+    .project-info {
+      width: 80%;
+    }
+    .video-area {
+      width: 60%;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .SingleProject {
+    .project-info {
+      width: 90% !important;
+    }
+    .video-area {
+      width: 80% !important;
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .SingleProject {
+    .project-info {
+      width: 95% !important;
+    }
+    .video-area {
+      width: 90% !important;
+    }
+  }
+}

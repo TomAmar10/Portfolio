@@ -1,0 +1,109 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixes.scss";
+
+.About {
+  @include flex-center(column);
+  justify-content: flex-start;
+  padding: 3rem 0 10rem;
+  .header {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+  .header-border {
+    width: 2rem;
+    height: 3px;
+    border-radius: 5px;
+    background-color: $color1;
+  }
+  .details {
+    @include flex-center(row);
+    align-items: flex-start;
+    gap: 5rem;
+    padding: 3rem 5rem 0;
+    .about-me {
+      width: 50%;
+      h5 {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+      p {
+        font-size: 1.4rem;
+        a {
+          font-weight: bold;
+          text-decoration: underline;
+          cursor: pointer;
+          color: $color2;
+        }
+      }
+    }
+    .skills-area {
+      width: 50%;
+      h5 {
+        font-size: 2rem;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 2rem;
+      }
+      h6 {
+        text-decoration: underline;
+        font-size: 1.3rem;
+      }
+      .my-skills {
+        @include flex-center(row);
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        .skill {
+          padding: 0.5rem 1rem;
+          background-color: gray;
+          border-radius: 5px;
+          font-weight: 700;
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .About {
+    .details {
+      padding: 3rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .About {
+    .details {
+      gap: 3rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .About {
+    .details {
+      padding: 2rem 1rem;
+      flex-direction: column;
+
+      .skills-area {
+        width: 100%;
+        .my-skills{
+          .skill{
+            padding: 0.3rem 1rem;
+          }
+        }
+      }
+      .about-me {
+        width: 100%;
+        h5 {
+          display: none;
+        }
+      }
+    }
+  }
+}

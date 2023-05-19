@@ -1,0 +1,107 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixes.scss";
+
+.Navbar {
+  .navbar {
+    background-color: $bgColor;
+    box-shadow: rgba(219, 218, 218, 0.15) 0px 5px 15px;
+    padding: 1rem 5rem;
+    height: 6rem;
+    .navbar-brand {
+      background-color: $color1;
+      border-radius: 50%;
+      width: 4rem;
+      height: 4rem;
+      @include flex-center(column);
+      .logo-img {
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 4rem;
+        cursor: pointer;
+        transform: rotate(20deg);
+      }
+    }
+    .nav-link {
+      color: $color2;
+      font-size: 1.2rem;
+      &.active {
+        color: $color1;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .navbar-nav {
+      gap: 5rem;
+    }
+
+    .navbar-toggler {
+      outline: none;
+      box-shadow: none;
+      border: none;
+    }
+    .menu {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .Navbar {
+    .navbar {
+      padding: 1rem 2rem;
+      .collapse {
+        .navbar-nav {
+          gap: 3rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .Navbar {
+    .navbar {
+      padding: 1rem;
+      .collapse {
+        .navbar-nav {
+          gap: 2rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 575px) {
+  .Navbar {
+    .navbar {
+      .menu {
+        display: block;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 100%;
+        background-color: $bgColor;
+        padding: 1rem;
+        width: 100%;
+        text-align: center;
+        box-shadow: rgba(255, 255, 255, 0.25) 0px 5px 5px -20px,
+          #ffffff4d 0px 8px 16px -8px;
+        transition: opacity 0.3s ease-out;
+        .navbar-nav {
+          gap: 0;
+          .nav-item {
+            .nav-link {
+              padding: 0.5rem 0;
+              font-weight: bold;
+            }
+          }
+        }
+
+        &.show {
+          // display: block;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
