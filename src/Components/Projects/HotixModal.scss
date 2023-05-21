@@ -8,10 +8,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 3;
+  z-index: 60;
   box-shadow: rgba(255, 255, 255, 0.56) 0px 7px 50px 4px;
   .close-btn {
     position: absolute;
+    z-index: 3;
     right: 1.5rem;
     background: none;
     color: $color2;
@@ -49,8 +50,6 @@
         font-weight: bold;
         margin: 0.5rem 0 1rem 0;
       }
-      .role {
-      }
       .contact-menu {
         margin-top: 2rem;
         @include flex-center(row);
@@ -81,4 +80,63 @@
   left: 0;
   background-color: rgba(0, 0, 0, 0.813);
   z-index: 2;
+}
+
+@media only screen and (max-width: 1000px) {
+  .HotixModal {
+    .members {
+      .single-member {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .HotixModal {
+    .members {
+      .single-member {
+        .contact-menu {
+          .fa-whatsapp,
+          .fa-linkedin,
+          .fa-phone {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .HotixModal {
+    min-width: 20rem;
+    .members {
+      @include flex-center(column);
+      padding: 1rem 0;
+      .single-member {
+        .member-img {
+          width: 3rem;
+          height: 3rem;
+        }
+        .contact-menu {
+          margin-top: 0.5rem;
+          .fa-whatsapp,
+          .fa-linkedin,
+          .fa-phone {
+            font-size: 1.3rem;
+          }
+        }
+        .member-name {
+          margin: 0;
+        }
+      }
+      .separator {
+        height: 1rem;
+        width: 80%;
+        border: none;
+        border-top: 1px $color2 solid;
+      }
+    }
+  }
 }

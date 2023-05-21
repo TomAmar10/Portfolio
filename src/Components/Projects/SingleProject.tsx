@@ -20,7 +20,7 @@ function SingleProject(props: props): JSX.Element {
   return (
     <div className="SingleProject">
       <div className="project-info">
-        <h3>{project.title}</h3>
+        <h3 className="project-name">{project.title}</h3>
         <p className="description">{project.description}</p>
         <h5 className="built-with">Built with: </h5>
         <p className="tools">
@@ -100,7 +100,7 @@ function SingleProject(props: props): JSX.Element {
       >
         <div className="project-video">
           <img className="computer-bg" src={computerBg} alt="InsTravel" />
-          <video ref={videoRef} muted>
+          <video ref={videoRef} muted autoPlay>
             <source
               src={require(`../../${project.videoPath}`)}
               type="video/mp4"

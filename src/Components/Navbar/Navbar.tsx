@@ -14,7 +14,10 @@ function Navbar(): JSX.Element {
     <div className="Navbar">
       <nav className="navbar navbar-expand-sm navbar-dark fixed-top">
         <Link to="Home" className="navbar-brand" spy={true} offset={-100}>
-          <img src={logo} className="logo-img" alt="Logo" />
+          <div className="logo">
+            <img src={logo} className="logo-img" alt="Logo" />
+          </div>
+            <span className="logo-name">TOM AMAR</span>
         </Link>
         <button
           className="navbar-toggler"
@@ -28,6 +31,7 @@ function Navbar(): JSX.Element {
             {pages.map((p) => (
               <li className="nav-item" key={p}>
                 <Link
+                  onClick={closeMenu}
                   className="nav-link"
                   activeClass="active"
                   to={p}

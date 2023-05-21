@@ -2,7 +2,7 @@
 @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
 
 body {
-  background-color: $bgColor;
-  color: $color2;
-  font-family: 'Open Sans Condensed', sans-serif;
+  background-color: $bgColor !important;
+  color: $color2 !important;
+  font-family: 'Open Sans Condensed', sans-serif !important;
 }
