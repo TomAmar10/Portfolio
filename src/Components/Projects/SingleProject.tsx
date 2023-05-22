@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import computerBg from "../../assets/computer.png";
 import { Project } from "./allProjects";
 import React from "react";
@@ -10,13 +9,10 @@ interface props {
 }
 
 function SingleProject(props: props): JSX.Element {
-  const videoRef = useRef<HTMLVideoElement>(null);
   const project = props.project;
 
   const hotixClick = () => props.onHotixClick();
 
-  const stopVideo = () => videoRef.current && videoRef.current?.pause();
-  const enterVideo = () => videoRef.current && videoRef.current?.play();
   return (
     <div className="SingleProject">
       <div className="project-info">
@@ -89,25 +85,15 @@ function SingleProject(props: props): JSX.Element {
           )}
         </div>
       </div>
-      <a
-        href={project.links?.website}
-        onClick={() => props.project.hotix && props.onHotixClick()}
-        target="_blank"
-        rel="noreferrer"
-        className="video-area"
-        onMouseEnter={enterVideo}
-        onMouseLeave={stopVideo}
-      >
-        <div className="project-video">
-          <img className="computer-bg" src={computerBg} alt="InsTravel" />
-          <video ref={videoRef} muted autoPlay>
-            <source
-              src={require(`../../${project.videoPath}`)}
-              type="video/mp4"
-            />
-          </video>
-        </div>
-      </a>
+      <div className="project-video">
+        <img className="computer-bg" src={computerBg} alt="InsTravel" />
+        <video controls={true} muted preload="auto" autoPlay>
+          <source
+            src={require(`../../${project.videoPath}`)}
+            type="video/mp4"
+          />
+        </video>
+      </div>
     </div>
   );
 }

@@ -6,10 +6,11 @@
   padding: 2rem 5rem 10rem;
   gap: 3rem;
   .profile-container {
+    width: 50%;
     img {
-      width: 60%;
+      width: 70%;
       border-radius: 500px;
-      transform: rotate(20deg);
+      background-color: lighten($bgColor, 2%);
     }
   }
 
@@ -106,7 +107,7 @@
     justify-content: space-between;
     .profile-container {
       img {
-        width: 70%;
+        width: 100%;
       }
     }
   }
@@ -114,9 +115,7 @@
 @media only screen and (max-width: 1000px) {
   .Home {
     .profile-container {
-      img {
-        width: 80%;
-      }
+      width: 70%;
     }
   }
 }
@@ -129,9 +128,9 @@
     .details-container {
       img {
         display: block;
-        width: 30%;
+        width: 50%;
         border-radius: 500px;
-        transform: rotate(20deg);
+        background-color: lighten($bgColor, 2%);
       }
     }
   }
@@ -149,7 +148,7 @@
         max-width: 100%;
       }
       img {
-        width: 40%;
+        width: 60%;
         margin-top: -2rem;
       }
     }

@@ -1,5 +1,5 @@
 import "./Home.scss";
-import logo from "../../assets/tomlogo3.png";
+import logo from "../../assets/tom-logo-new.png";
 import { Link } from "react-scroll";
 import { getWhatsappTom } from "../Projects/HotixMembers";
 

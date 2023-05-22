@@ -10,6 +10,7 @@
     .navbar-brand {
       @include flex-center(row);
       gap: 1rem;
+      cursor: pointer;
       .logo {
         @include flex-center(row);
         background-color: $color1;
@@ -18,10 +19,7 @@
         height: 4rem;
         .logo-img {
           border-radius: 50%;
-          width: 2.5rem;
-          height: 4rem;
-          cursor: pointer;
-          transform: rotate(20deg);
+          width: 3.8rem;
         }
       }
       .logo-name{
@@ -99,22 +97,23 @@
         .navbar-nav {
           gap: 0;
           .nav-item {
+            height: 0;
+            overflow: hidden;
+            transition: height 3s ease-out;
             .nav-link {
               padding: 0.5rem 0;
               font-weight: bold;
-              display: none;
             }
           }
         }
-
+        
         &.show {
           opacity: 1;
           height: auto;
           .navbar-nav {
             .nav-item {
-              .nav-link {
-                display: block;
-              }
+              height: auto;
+              transition: height 3s ease-out;
             }
           }
         }

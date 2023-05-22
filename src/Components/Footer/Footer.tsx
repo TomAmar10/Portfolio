@@ -47,7 +47,7 @@ function Footer(): JSX.Element {
       </div>
       <hr />
       <div className="bottom">
-      © Copyright 2023. Made by <a href="http://localhost:3000">Tom Amar</a>
+      © Copyright 2023. Made by <a href="https://tomamar.netlify.app">Tom Amar</a>
       </div>
     </div>
   );

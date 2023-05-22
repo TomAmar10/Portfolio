@@ -74,24 +74,20 @@
       }
     }
   }
-  .video-area {
+  .project-video {
     width: 35%;
-    cursor: pointer;
-    .project-video {
+    position: relative;
+    .computer-bg {
       width: 100%;
       position: relative;
-      .computer-bg {
-        width: 100%;
-        z-index: 5;
-        position: relative;
-      }
-      video {
-        position: absolute;
-        width: 95%;
-        top: 4%;
-        left: 2%;
-        z-index: 4;
-      }
+    }
+    video {
+      position: absolute;
+      width: 95%;
+      z-index: 10;
+      top: 4%;
+      left: 2.5%;
+      z-index: 4;
     }
   }
 }
@@ -99,7 +95,7 @@
 @media only screen and (max-width: 1250px) {
   .SingleProject {
     gap: 3rem;
-    .video-area {
+    .project-video {
       width: 45%;
     }
   }
@@ -113,7 +109,7 @@
       height: 25rem;
       justify-content: flex-start;
     }
-    .video-area {
+    .project-video {
       width: 60%;
     }
   }
@@ -123,7 +119,7 @@
     .project-info {
       width: 90%;
     }
-    .video-area {
+    .project-video {
       width: 80%;
     }
   }
@@ -139,7 +135,7 @@
         justify-content: center;
       }
     }
-    .video-area {
+    .project-video {
       width: 90%;
     }
   }
@@ -159,7 +155,7 @@
         margin-bottom: 1rem;
       }
     }
-    .video-area {
+    .project-video {
       width: 90%;
     }
   }

@@ -62,7 +62,7 @@ const projects: Project[] = [
     tools: ["React", "Typescript", "SASS", "Bootstrap"],
     videoPath: "assets/portfolio.mp4",
     links: {
-      front: "df.com",
+      front: "https://github.com/TomAmar10/Portfolio",
     },
     portfolio: true,
   },

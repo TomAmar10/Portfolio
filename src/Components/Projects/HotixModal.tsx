@@ -1,5 +1,6 @@
 import "./HotixModal.scss";
 import hotixMembers from "./HotixMembers";
+import React from "react";
 
 interface props {
   onModalClose: Function;
@@ -21,7 +22,7 @@ function HotixModal(props: props): JSX.Element {
         </span>
         <div className="members">
           {hotixMembers.map((m, i) => (
-            <>
+            <React.Fragment key={i}>
               <div className="single-member" key={m.name}>
                 <img
                   src={require(`../../${m.image}`)}
@@ -43,7 +44,7 @@ function HotixModal(props: props): JSX.Element {
                 </div>
               </div>
               {i + 1 < hotixMembers.length && <div className="separator"></div>}
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>
