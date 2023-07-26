@@ -2,7 +2,7 @@ const projects: Project[] = [
   {
     title: "Hotix",
     description:
-      "I'm currently developing Hotix, a unique web application for an upcoming startup. It manages and secures second-hand ticket exchanges for various events. The code and application will be revealed in 1-2 months, as per managerial requirements. ",
+      "I'm currently developing Hotix, a unique web application for an upcoming startup. It manages and secures second-hand ticket exchanges for various events. Code will be shown privately if requested. ",
     tools: [
       "React",
       "Redux toolkit",
@@ -13,6 +13,17 @@ const projects: Project[] = [
     ],
     videoPath: "assets/hotix.mp4",
     hotix: true,
+  },
+  {
+    title: "Dor Levy Investments",
+    description:
+      "'Dor Levy Investments' is the personal website of Dor Levy, a trusted advisor in crypto and stock markets. Explore insightful blogs, book private lessons, and connect for expert guidance. Code will be shown privately if requested.",
+    tools: ["Angular", "Rxjs & Observables", "FireBase", "Typescript"],
+    links: {
+      website: "https://dor-levy.netlify.app",
+    },
+    videoPath: "assets/dor-levy.mp4",
+    dor: true,
   },
   {
     title: "Shop Online",
@@ -32,17 +43,6 @@ const projects: Project[] = [
     },
     videoPath: "assets/shop-online.mp4",
     shop: true,
-  },
-  {
-    title: "Dor Levy Investments",
-    description:
-      "'Dor Levy Investments' is the personal website of Dor Levy, a trusted advisor in crypto and stock markets. Explore insightful blogs, book private lessons, and connect for expert guidance. Please note that the website is currently being built and will be available soon.",
-    tools: ["Angular", "Rxjs & Observables", "FireBase", "Typescript"],
-    links: {
-      website: "https://dor-levy.netlify.app",
-    },
-    videoPath: "assets/dor-levy.mp4",
-    dor: true,
   },
   {
     title: "InsTravel",
