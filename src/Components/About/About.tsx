@@ -1,11 +1,17 @@
 import { Link } from "react-scroll";
 import "./About.scss";
+import tomCV from "../../assets/tomamar.pdf";
 
 function About(): JSX.Element {
+  const downloadCV = async () => window.open(tomCV, "_blank");
+
   return (
-    <div className="About" id="About">
+    <div className="About" id="About Me">
       <h1 className="header">ABOUT ME</h1>
       <span className="header-border"></span>
+      <button className="download-cv" onClick={downloadCV}>
+        Click here to see my CV
+      </button>
       <div className="details">
         <div className="about-me">
           <h5>Get to know me!</h5>
@@ -14,23 +20,21 @@ function About(): JSX.Element {
             Throughout my journey, I have honed my skills by building a variety
             of projects. <br />
             Currently, I am thrilled to be a key developer in a collaborative
-            team working on an exciting app (you can find it in{" "}
+            team working on an exciting app named "HOTIX" (you can find it in{" "}
             <Link to="Projects" spy={true} offset={-100}>
               Project
             </Link>{" "}
-            section).
+            section). <br />
+            Additionally, I'm also a part of the development team of a fintech
+            startup, working under Yaniv Abadi (to contact - 0546250917).
           </p>
           <p>
-            What sets me apart is my ability to thrive in a group setting, <br />
-            leveraging my teamwork skills.
             As a quick learner, I relish challenges and consistently push myself
-            to new heights. <br />
-            To ensure clean and efficient development, I write my code in
-            TypeScript. I am confident that my expertise and dedication will
-            make a great impact on any project I undertake.
+            to new heights. <br />I am confident that my expertise and
+            dedication will make a great impact on any project I undertake.
           </p>
           <p>
-            I'm open for job opportunities where i can contribute, grow and
+            I'm open for job opportunities where I can contribute, grow and
             learn. If you have a good opportunity that matches my skills, don't
             hesitate to{" "}
             <Link to="Contact" spy={true} offset={-100}>

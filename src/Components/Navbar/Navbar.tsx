@@ -1,11 +1,10 @@
-// import logo from "../../assets/tomlogo3.png";
-import logo from "../../assets/tom-logo-new.png";
+import logo from "../../assets/tom-logo.png";
 import { Link } from "react-scroll";
 import { useState } from "react";
 import "./Navbar.scss";
 
 function Navbar(): JSX.Element {
-  const pages = ["Home", "Projects", "About", "Contact"];
+  const pages = ["Home", "Projects", "About Me", "Contact"];
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen((prev) => !prev);
@@ -18,13 +17,9 @@ function Navbar(): JSX.Element {
           <div className="logo">
             <img src={logo} className="logo-img" alt="Logo" />
           </div>
-            <span className="logo-name">TOM AMAR</span>
+          <span className="logo-name">TOM AMAR</span>
         </Link>
-        <button
-          className="navbar-toggler"
-          onClick={toggleMenu}
-          onBlur={closeMenu}
-        >
+        <button className="navbar-toggler" onClick={toggleMenu}>
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className={`menu ${isOpen ? "show" : ""}`}>

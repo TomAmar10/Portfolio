@@ -2,161 +2,95 @@
 @import "../../styles/mixes.scss";
 
 .SingleProject {
-  @include flex-center(row);
-  gap: 5rem;
-  margin-top: 5rem;
-  .project-info {
-    @include flex-center(column);
-    width: 40%;
-    font-size: 1.3rem;
-    .project-name {
-      font-weight: bold;
-      font-size: 2.5rem;
-    }
-    .description {
-      margin-bottom: 2rem;
-    }
-    .hotix-button {
-      button {
-        font-weight: bold;
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        color: $color1;
-        width: max-content;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        border: 1px $color1 solid;
-        text-decoration: none;
-        transition: all 0.3s ease-out;
-        background-color: transparent;
-        &:hover {
-          box-shadow: rgba($color1, 0.26) 0px 2px 30px 3px;
-          background-color: $color1;
-          color: black;
-        }
-      }
-    }
-    h5 {
-      text-decoration: underline;
-      text-align: center;
-      font-size: 1.3rem;
-    }
-    .tools {
-      width: 100%;
-      font-weight: bold;
-      @include flex-center(row);
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
-    }
-    .project-links {
-      width: 100%;
-      .links {
-        @include flex-center(row);
-      }
-      a {
-        width: calc(100% / 3);
-        text-align: center;
-        text-decoration: none;
-        color: $color1;
-        transition: all 0.3s ease;
-        &:hover {
-          color: lighten($color1, 10%);
-          font-weight: bold;
-        }
-      }
-      .code-msg {
-        display: block;
-        font-size: 1rem;
-        text-align: left;
-      }
-    }
-  }
+  width: 28rem;
+  background-color: rgb(228, 228, 228);
+  border-radius: 5px;
+  min-height: 40rem;
   .project-video {
-    width: 35%;
+    width: 100%;
     position: relative;
-    .computer-bg {
-      width: 100%;
-      position: relative;
-    }
     video {
-      position: absolute;
-      width: 95%;
-      z-index: 10;
-      top: 4%;
-      left: 2.5%;
+      border-radius: 5px 5px 0 0;
+      width: 100%;
       z-index: 4;
     }
   }
-}
-
-@media only screen and (max-width: 1250px) {
-  .SingleProject {
-    gap: 3rem;
-    .project-video {
-      width: 45%;
+  .project-details {
+    padding: 0 2rem 1rem;
+    color: black;
+    width: 100%;
+    min-height: 25rem;
+    @include flex-center(column);
+    justify-content: space-between;
+    div {
+      width: 100%;
     }
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .SingleProject {
-    flex-direction: column;
-    margin-top: 3rem;
-    .project-info {
-      width: 80%;
-      height: 25rem;
-      justify-content: flex-start;
+    h1 {
+      width: 100%;
+      font-weight: bold;
+      text-align: start;
     }
-    .project-video {
-      width: 60%;
+    p {
+      text-align: start;
+      font-size: 1.3rem;
     }
-  }
-}
-@media only screen and (max-width: 700px) {
-  .SingleProject {
-    .project-info {
-      width: 90%;
+    hr {
+      margin: 0.5rem 0;
     }
-    .project-video {
-      width: 80%;
+    button.link {
+      background-color: $color1;
+      color: black;
+      text-decoration: none;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      font-weight: bold;
+      font-size: 1.3rem;
+      width: 100%;
+      margin-bottom: 0.5rem;
     }
-  }
-}
-@media only screen and (max-width: 550px) {
-  .SingleProject {
-    .project-info {
-      width: 95%;
-      height: 25rem;
-      .tools {
-        width: 100%;
-        gap: 0.5rem;
-        justify-content: center;
+    .front-back-links {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5rem;
+    }
+    .tools {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-weight: bold;
+      gap: 1rem;
+      row-gap: 0.2rem;
+      .tool {
+        span {
+          font-size: 1.1rem;
+        }
       }
     }
-    .project-video {
-      width: 90%;
-    }
   }
 }
 
+@media only screen and (max-width: 1050px) {
+  .SingleProject {
+    width: 70%;
+    .project-details {
+      min-height: auto;
+      .tools{
+        justify-content: flex-start;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 850px) {
+  .SingleProject {
+    width: 90%;
+    .project-details {
+      min-height: auto;
+    }
+  }
+}
 @media only screen and (max-width: 500px) {
   .SingleProject {
-    .project-info {
-      height: 30rem;
-      .tools {
-        width: 100%;
-        gap: 0.5rem;
-        justify-content: center;
-        margin-bottom: 1rem;
-      }
-      .description {
-        margin-bottom: 1rem;
-      }
-    }
-    .project-video {
-      width: 90%;
-    }
+    width: 100%;
   }
 }

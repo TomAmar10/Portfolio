@@ -1,4 +1,3 @@
-import computerBg from "../../assets/computer.png";
 import { Project } from "./allProjects";
 import React from "react";
 import "./SingleProject.scss";
@@ -13,86 +12,80 @@ function SingleProject(props: props): JSX.Element {
 
   const hotixClick = () => props.onHotixClick();
 
+  const navigateTo = (url: string | undefined) => {
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="SingleProject">
-      <div className="project-info">
-        <h3 className="project-name">{project.title}</h3>
-        <p className="description">{project.description}</p>
-        <h5 className="built-with">Built with: </h5>
-        <p className="tools">
-          {project.tools.map((t, i) => (
-            <React.Fragment key={i}>
-              <span>{t}</span>
-              {i + 1 < project.tools.length && "-"}
-            </React.Fragment>
-          ))}
-        </p>
-        <div className="project-links">
-          {project.links && Object.keys(project.links).length > 1 && (
-            <>
-              <h5>Visit here:</h5>
-              <div className="links">
-                {project.links.back && (
-                  <a href={project.links.back} target="_blank" rel="noreferrer">
-                    Backend code
-                  </a>
-                )}
-                {project.links.website && (
-                  <a
-                    href={project.links.website}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Website
-                  </a>
-                )}
-                {project.links.front && (
-                  <a
-                    href={project.links.front}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Frontend code
-                  </a>
-                )}
-              </div>
-            </>
-          )}
-          {project.hotix && (
-            <div className="hotix-button" onClick={hotixClick}>
-              <button>To hear more about Hotix, click here!</button>
-            </div>
-          )}
-          {project.dor && (
-            <>
-              <a href={project.links?.website} target="_blank" rel="noreferrer">
-                Visit Website
-              </a>
-              <span className="code-msg">
-                * Code for this website is private
-              </span>
-            </>
-          )}
-          {project.portfolio && (
-            <>
-              <a href={project.links?.front} target="_blank" rel="noreferrer">
-                View code
-              </a>
-              <span className="code-msg">
-                Website is the current website you are on.
-              </span>
-            </>
-          )}
-        </div>
-      </div>
       <div className="project-video">
-        <img className="computer-bg" src={computerBg} alt="InsTravel" />
-        <video controls={true} muted preload="auto" autoPlay>
+        <video controls={true} muted preload="auto">
           <source
             src={require(`../../${project.videoPath}`)}
             type="video/mp4"
           />
         </video>
+      </div>
+      <div className="project-details">
+        <div>
+          <h1>{project.title}</h1>
+          <p>{project.description}</p>
+        </div>
+        <div>
+          {project.hotix && (
+            <button className="link" onClick={hotixClick}>
+              To hear more about Hotix, click here!
+            </button>
+          )}
+          {project.portfolio && (
+            <button
+              className="link"
+              onClick={() => navigateTo(project.links?.front)}
+            >
+              View code
+            </button>
+          )}
+          {project.dor && (
+            <button
+              className="link"
+              onClick={() => navigateTo(project.links?.website)}
+            >
+              Visit Website
+            </button>
+          )}
+          {(project.instravel || project.shop) && (
+            <>
+              <div className="front-back-links">
+                <button
+                  className="link"
+                  onClick={() => navigateTo(project.links?.front)}
+                >
+                  Frontend Code
+                </button>
+                <button
+                  className="link"
+                  onClick={() => navigateTo(project.links?.back)}
+                >
+                  Backend Code
+                </button>
+              </div>
+              <button
+                className="link"
+                onClick={() => navigateTo(project.links?.website)}
+              >
+                Visit Website
+              </button>
+            </>
+          )}
+          <hr />
+          <div className="tools">
+            {project.tools.map((t, i) => (
+              <span className="tool" key={i}>
+                <span>#{t}</span>
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

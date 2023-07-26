@@ -23,7 +23,7 @@ const hotixMembers = [
   },
   {
     name: "Tom Amar",
-    image: "assets/tomlogo2.png",
+    image: "assets/tom-logo.png",
     role: "Fullstack Developer",
     linkedin: "https://www.linkedin.com/in/tom-amar-b2494a25a/",
     phone: "+972525416514",

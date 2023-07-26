@@ -1,5 +1,5 @@
 import "./Home.scss";
-import logo from "../../assets/tom-logo-new.png";
+import logo from "../../assets/tom-logo.png";
 import { Link } from "react-scroll";
 import { getWhatsappTom } from "../Projects/HotixMembers";
 
@@ -11,8 +11,9 @@ function Home(): JSX.Element {
         <h1 className="home-header">HEY, I'M TOM AMAR</h1>
         <img src={logo} alt="tom" />
         <p className="main-paragraph">
-          A Frontend focused Web Developer building the Frontend of Websites and
-          Web Applications that leads to the success of the overall product
+          A Fullstack web developer building both front and back ends of
+          Websites and Web Applications that leads to the success of the overall
+          product
         </p>
         <Link to="Projects" offset={-100} className="btn my-projects-btn">
           <span>PROJECTS</span>

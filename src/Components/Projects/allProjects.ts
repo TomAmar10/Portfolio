@@ -2,7 +2,7 @@ const projects: Project[] = [
   {
     title: "Hotix",
     description:
-      "Hotix is an upcoming application designed for buying and selling second-hand tickets for various events. While the application is still in the building phase, the video demonstration showcases its core functionalities, with some features intentionally not shown to respect the company's privacy. The application and its source code is not currently accessible as it belongs to the company.",
+      "I'm currently developing Hotix, a unique web application for an upcoming startup. It manages and secures second-hand ticket exchanges for various events. The code and application will be revealed in 1-2 months, as per managerial requirements. ",
     tools: [
       "React",
       "Redux toolkit",
@@ -31,6 +31,7 @@ const projects: Project[] = [
       back: "https://github.com/TomAmar10/Shop-Online-backend-mongo-nodejs",
     },
     videoPath: "assets/shop-online.mp4",
+    shop: true,
   },
   {
     title: "Dor Levy Investments",
@@ -54,6 +55,7 @@ const projects: Project[] = [
       back: "https://github.com/TomAmar10/vacations-nodejs_TS-deploy",
     },
     videoPath: "assets/instravel.mp4",
+    instravel: true,
   },
   {
     title: "Tom Amar's Portfolio",
@@ -83,6 +85,8 @@ export interface Project {
   hotix?: boolean;
   portfolio?: boolean;
   dor?: boolean;
+  instravel?: boolean;
+  shop?: boolean;
 }
 
 export default projects;

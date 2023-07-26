@@ -15,11 +15,23 @@
     border-radius: 5px;
     background-color: $color1;
   }
+  .download-cv {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: none;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
   .details {
     @include flex-center(row);
     align-items: flex-start;
     gap: 5rem;
-    padding: 3rem 5rem 0;
+    padding: 2rem 5rem 0;
     .about-me {
       width: 50%;
       h5 {
@@ -58,7 +70,8 @@
         margin-bottom: 2rem;
         .skill {
           padding: 0.5rem 1rem;
-          background-color: gray;
+          background-color: lighten($bgColor, 10%);
+          border: $color1 2px solid;
           border-radius: 5px;
           font-weight: 700;
           font-size: 1.3rem;
@@ -92,14 +105,16 @@
 
       .skills-area {
         width: 100%;
-        .my-skills{
-          .skill{
+        .my-skills {
+          justify-content: center;
+          .skill {
             padding: 0.3rem 1rem;
           }
         }
       }
       .about-me {
         width: 100%;
+        text-align: center;
         h5 {
           display: none;
         }

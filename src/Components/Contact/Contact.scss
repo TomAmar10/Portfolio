@@ -49,6 +49,7 @@
       border-radius: 5px;
       border: none;
       font-weight: bold;
+      color: black;
     }
     .thanks-msg {
       height: 100%;
@@ -75,6 +76,18 @@
       height: 0;
       width: 0;
       padding: 0;
+    }
+  }
+  .links-container {
+    @include flex-center(row);
+    gap: 2rem;
+    padding: 0.5rem 1rem;
+    * {
+      color: $color2;
+      font-size: 1.8rem;
+      &.fa-phone {
+        font-size: 1.6rem;
+      }
     }
   }
 }

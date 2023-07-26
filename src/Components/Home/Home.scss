@@ -3,7 +3,7 @@
 
 .Home {
   @include flex-center(row);
-  padding: 2rem 5rem 10rem;
+  padding: 5rem 5rem 10rem;
   gap: 3rem;
   .profile-container {
     width: 50%;
