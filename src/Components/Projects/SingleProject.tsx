@@ -1,5 +1,5 @@
 import { Project } from "./allProjects";
-import React from "react";
+import { lazy, Suspense } from "react";
 import "./SingleProject.scss";
 
 interface props {
@@ -16,15 +16,13 @@ function SingleProject(props: props): JSX.Element {
     window.open(url, "_blank");
   };
 
+  const LazyVideo = lazy(() => import("./LazyVideo"));
   return (
     <div className="SingleProject">
       <div className="project-video">
-        <video controls={true} muted preload="auto">
-          <source
-            src={require(`../../${project.videoPath}`)}
-            type="video/mp4"
-          />
-        </video>
+        <Suspense fallback={<div>Loading video...</div>}>
+          <LazyVideo video={project.videoPath} />
+        </Suspense>
       </div>
       <div className="project-details">
         <div>
@@ -33,9 +31,17 @@ function SingleProject(props: props): JSX.Element {
         </div>
         <div>
           {project.hotix && (
-            <button className="link" onClick={hotixClick}>
-              To hear more about Hotix, click here!
-            </button>
+            <>
+              <button
+                className="link"
+                onClick={() => navigateTo(project.links?.code)}
+              >
+                View Code
+              </button>
+              <button className="link" onClick={hotixClick}>
+                To hear more about Hotix, click here!
+              </button>
+            </>
           )}
           {project.portfolio && (
             <button
@@ -46,12 +52,20 @@ function SingleProject(props: props): JSX.Element {
             </button>
           )}
           {project.dor && (
-            <button
-              className="link"
-              onClick={() => navigateTo(project.links?.website)}
-            >
-              Visit Website
-            </button>
+            <>
+              <button
+                className="link"
+                onClick={() => navigateTo(project.links?.code)}
+              >
+                View Code
+              </button>
+              <button
+                className="link"
+                onClick={() => navigateTo(project.links?.website)}
+              >
+                Visit Website
+              </button>
+            </>
           )}
           {(project.instravel || project.shop) && (
             <>

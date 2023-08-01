@@ -19,7 +19,7 @@
     padding: 0 2rem 1rem;
     color: black;
     width: 100%;
-    min-height: 25rem;
+    min-height: 27rem;
     @include flex-center(column);
     justify-content: space-between;
     div {
@@ -56,11 +56,11 @@
     }
     .tools {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
       font-weight: bold;
-      gap: 1rem;
+      gap: 1.5rem;
       row-gap: 0.2rem;
+      height: 3rem;
       .tool {
         span {
           font-size: 1.1rem;
@@ -75,7 +75,7 @@
     width: 70%;
     .project-details {
       min-height: auto;
-      .tools{
+      .tools {
         justify-content: flex-start;
       }
     }
@@ -91,6 +91,9 @@
 }
 @media only screen and (max-width: 500px) {
   .SingleProject {
-    width: 100%;
+    width: 98%;
+  }
+  .project-details{
+    padding: 0 1rem 1rem !important;
   }
 }
