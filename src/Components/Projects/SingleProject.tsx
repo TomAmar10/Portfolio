@@ -30,72 +30,31 @@ function SingleProject(props: props): JSX.Element {
           <p>{project.description}</p>
         </div>
         <div>
-          {project.hotix && (
-            <>
-              <button
-                className="link"
-                onClick={() => navigateTo(project.links?.code)}
-              >
-                View Code
-              </button>
-              <button className="link" onClick={hotixClick}>
-                To hear more about Hotix, click here!
-              </button>
-            </>
-          )}
-          {project.portfolio && (
-            <button
-              className="link"
-              onClick={() => navigateTo(project.links?.front)}
-            >
-              View code
+          <button
+            className="link"
+            onClick={() => navigateTo(project.links?.code)}
+          >
+            <i className="fa-brands fa-github"></i>
+            <span>View Code</span>
+          </button>
+          {project.hotix ? (
+            <button className="link-first link" onClick={hotixClick}>
+              To hear more about Hotix, click here!
             </button>
-          )}
-          {project.dor && (
-            <>
-              <button
-                className="link"
-                onClick={() => navigateTo(project.links?.code)}
-              >
-                View Code
-              </button>
-              <button
-                className="link"
-                onClick={() => navigateTo(project.links?.website)}
-              >
-                Visit Website
-              </button>
-            </>
-          )}
-          {(project.instravel || project.shop) && (
-            <>
-              <div className="front-back-links">
-                <button
-                  className="link"
-                  onClick={() => navigateTo(project.links?.front)}
-                >
-                  Frontend Code
-                </button>
-                <button
-                  className="link"
-                  onClick={() => navigateTo(project.links?.back)}
-                >
-                  Backend Code
-                </button>
-              </div>
-              <button
-                className="link"
-                onClick={() => navigateTo(project.links?.website)}
-              >
-                Visit Website
-              </button>
-            </>
+          ) : (
+            <button
+              className="link-first link"
+              onClick={() => navigateTo(project.links?.website)}
+            >
+              <i className="fa-solid fa-globe"></i>
+              <span>Visit Website</span>
+            </button>
           )}
           <hr />
           <div className="tools">
             {project.tools.map((t, i) => (
               <span className="tool" key={i}>
-                <span>#{t}</span>
+                #{t}
               </span>
             ))}
           </div>

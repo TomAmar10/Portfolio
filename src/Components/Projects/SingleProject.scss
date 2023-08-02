@@ -38,6 +38,10 @@
       margin: 0.5rem 0;
     }
     button.link {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
       background-color: $color1;
       color: black;
       text-decoration: none;
@@ -48,11 +52,11 @@
       font-size: 1.3rem;
       width: 100%;
       margin-bottom: 0.5rem;
-    }
-    .front-back-links {
-      display: flex;
-      flex-direction: row;
-      gap: 0.5rem;
+      &.link-first {
+        background-color: $bgColor;
+        color: $color1;
+        border: 1px $color1 solid;
+      }
     }
     .tools {
       display: flex;
@@ -62,9 +66,7 @@
       row-gap: 0.2rem;
       height: 3rem;
       .tool {
-        span {
-          font-size: 1.1rem;
-        }
+        font-size: 1.1rem;
       }
     }
   }
@@ -93,7 +95,7 @@
   .SingleProject {
     width: 98%;
   }
-  .project-details{
+  .project-details {
     padding: 0 1rem 1rem !important;
   }
 }
